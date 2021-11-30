@@ -1,0 +1,13 @@
+Windows Registry Editor Version 5.00
+
+; Setup context menu item for click on right panel:
+[HKEY_CURRENT_USER\Software\Classes\directory\Background\shell\Oppen in Bildvisaren\command]
+@="C:\Program Files\BildVisaren\Bildvisaren.exe \"%1\""
+
+[HKEY_CURRENT_USER\Software\Classes\bildvisaren\shell\open\command]
+@="C:\Program Files\BildVisaren\Bildvisaren.exe \"%1\""
+[HKEY_CURRENT_USER\Software\Classes\.bvpl]
+@="bildvisaren"
+
+[HKEY_CURRENT_USER\Software\Classes\.jpg\Background\shell\Oppen in Bildvisaren\command]
+@="C:\Program Files\BildVisaren\Bildvisaren.exe \"%1\""

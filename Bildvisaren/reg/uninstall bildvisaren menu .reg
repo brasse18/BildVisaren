@@ -1,0 +1,12 @@
+Windows Registry Editor Version 5.00
+
+; ta bort meny valet
+[-HKEY_CURRENT_USER\Software\Classes\directory\Background\shell\Oppen in Bildvisaren\command]
+
+; -------------------------------------------------------------------------------------
+
+; folders tree item:
+[-HKEY_CURRENT_USER\Software\Classes\directory\shell\Oppen in Bildvisaren\command]
+
+
+; https://stackoverflow.com/questions/20449316/how-add-context-menu-item-to-windows-explorer-for-folders
