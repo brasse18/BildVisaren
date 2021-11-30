@@ -120,5 +120,4 @@
       <dsig:DigestValue>GV2LAmV3qDB2Os2F6ZD8gwmk6avykS7m2tU2tOCt+WE=</dsig:DigestValue>
     </hash>
   </file>
-  <fileAssociation extension=".bvpl" description="BildVisare Playlist" progid="11" defaultIcon="icon.ico" xmlns="urn:schemas-microsoft-com:clickonce.v1" />
 </asmv1:assembly>
