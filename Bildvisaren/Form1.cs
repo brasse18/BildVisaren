@@ -165,25 +165,31 @@ namespace Bildvisaren
                 if (checkBox_w_screen.Checked == true || checkBox_h_screen.Checked == true)
                 {
                     pictureBox1.Size = pictureBox1.Image.Size;
+                    int pictureBoxWidth = pictureBox1.Width;
+                    int pictureBoxHeight = pictureBox1.Height;
                     if (checkBox_w_screen.Checked == true)
                     {
                         // ful lösning hitta någon annan
-                        while (pictureBox1.Width >= pictureBox1.Parent.Width - 20)
+                        // bäter men kan bli bätre
+                        while (pictureBoxWidth >= pictureBox1.Parent.Width - 20)
                         {
-                            pictureBox1.Width = (int)(pictureBox1.Width * 0.99);
-                            pictureBox1.Height = (int)(pictureBox1.Height * 0.99);
+                            pictureBoxWidth = (int)(pictureBoxWidth * 0.99);
+                            pictureBoxHeight = (int)(pictureBoxHeight * 0.99);
                         }
                     }
 
                     if (checkBox_h_screen.Checked == true)
                     {
                         // ful lösning hitta någon annan
-                        while (pictureBox1.Height >= pictureBox1.Parent.Height)
+                        // bäter men kan bli bätre
+                        while (pictureBoxHeight >= pictureBox1.Parent.Height)
                         {
-                            pictureBox1.Width = (int)(pictureBox1.Width * 0.99);
-                            pictureBox1.Height = (int)(pictureBox1.Height * 0.99);
+                            pictureBoxWidth = (int)(pictureBoxWidth * 0.99);
+                            pictureBoxHeight = (int)(pictureBoxHeight * 0.99);
                         }
                     }
+                    pictureBox1.Width = pictureBoxWidth;
+                    pictureBox1.Height = pictureBoxHeight;
                 }
                 else
                 {
