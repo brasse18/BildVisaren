@@ -39,7 +39,7 @@ namespace Bildvisaren
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Setings";
-            this.Text = "ImageListForm";
+            this.Text = "Setings";
             this.Load += new System.EventHandler(this.ImageListForm_Load);
             this.ResumeLayout(false);
 

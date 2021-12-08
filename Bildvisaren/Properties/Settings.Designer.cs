@@ -94,5 +94,17 @@ namespace Bildvisaren.Properties {
                 this["image_move_invert"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool rand_order_image {
+            get {
+                return ((bool)(this["rand_order_image"]));
+            }
+            set {
+                this["rand_order_image"] = value;
+            }
+        }
     }
 }

@@ -65,6 +65,7 @@ namespace Bildvisaren
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog_load_playlist = new System.Windows.Forms.OpenFileDialog();
+            this.checkBox_rand_order_of_image = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -75,7 +76,7 @@ namespace Bildvisaren
             // Next_Butten
             // 
             this.Next_Butten.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Next_Butten.Location = new System.Drawing.Point(690, 3);
+            this.Next_Butten.Location = new System.Drawing.Point(966, 3);
             this.Next_Butten.Name = "Next_Butten";
             this.Next_Butten.Size = new System.Drawing.Size(85, 61);
             this.Next_Butten.TabIndex = 0;
@@ -99,6 +100,7 @@ namespace Bildvisaren
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel1.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panel1.Controls.Add(this.checkBox_rand_order_of_image);
             this.panel1.Controls.Add(this.checkBox_invert_move);
             this.panel1.Controls.Add(this.label_scroll_faktor);
             this.panel1.Controls.Add(this.numericUpDown1);
@@ -116,9 +118,9 @@ namespace Bildvisaren
             this.panel1.Controls.Add(this.nega_size);
             this.panel1.Controls.Add(this.scroll_Size);
             this.panel1.Controls.Add(this.plus_size);
-            this.panel1.Location = new System.Drawing.Point(0, 403);
+            this.panel1.Location = new System.Drawing.Point(0, 406);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(778, 79);
+            this.panel1.Size = new System.Drawing.Size(1054, 79);
             this.panel1.TabIndex = 2;
             this.panel1.MouseWheel += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseWheel);
             // 
@@ -182,7 +184,7 @@ namespace Bildvisaren
             // button_load_playlist
             // 
             this.button_load_playlist.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button_load_playlist.Location = new System.Drawing.Point(448, 33);
+            this.button_load_playlist.Location = new System.Drawing.Point(724, 33);
             this.button_load_playlist.Name = "button_load_playlist";
             this.button_load_playlist.Size = new System.Drawing.Size(75, 31);
             this.button_load_playlist.TabIndex = 12;
@@ -193,7 +195,7 @@ namespace Bildvisaren
             // button_save_playlist
             // 
             this.button_save_playlist.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button_save_playlist.Location = new System.Drawing.Point(448, 4);
+            this.button_save_playlist.Location = new System.Drawing.Point(724, 4);
             this.button_save_playlist.Name = "button_save_playlist";
             this.button_save_playlist.Size = new System.Drawing.Size(75, 30);
             this.button_save_playlist.TabIndex = 11;
@@ -215,7 +217,7 @@ namespace Bildvisaren
             // button_image_list_visa
             // 
             this.button_image_list_visa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button_image_list_visa.Location = new System.Drawing.Point(529, 33);
+            this.button_image_list_visa.Location = new System.Drawing.Point(805, 33);
             this.button_image_list_visa.Name = "button_image_list_visa";
             this.button_image_list_visa.Size = new System.Drawing.Size(155, 31);
             this.button_image_list_visa.TabIndex = 9;
@@ -226,7 +228,7 @@ namespace Bildvisaren
             // button_oppen_folder
             // 
             this.button_oppen_folder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button_oppen_folder.Location = new System.Drawing.Point(529, 3);
+            this.button_oppen_folder.Location = new System.Drawing.Point(805, 3);
             this.button_oppen_folder.Name = "button_oppen_folder";
             this.button_oppen_folder.Size = new System.Drawing.Size(80, 31);
             this.button_oppen_folder.TabIndex = 8;
@@ -237,7 +239,7 @@ namespace Bildvisaren
             // button_open
             // 
             this.button_open.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button_open.Location = new System.Drawing.Point(608, 3);
+            this.button_open.Location = new System.Drawing.Point(884, 3);
             this.button_open.Name = "button_open";
             this.button_open.Size = new System.Drawing.Size(76, 31);
             this.button_open.TabIndex = 3;
@@ -325,7 +327,7 @@ namespace Bildvisaren
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(779, 399);
+            this.panel2.Size = new System.Drawing.Size(1055, 402);
             this.panel2.TabIndex = 3;
             // 
             // chromiumWebBrowser1
@@ -337,7 +339,7 @@ namespace Bildvisaren
 // TODO: Code generation for '' failed because of Exception 'Invalid Primitive Type: System.IntPtr. Consider using CodeObjectCreateExpression.'.
             this.chromiumWebBrowser1.Location = new System.Drawing.Point(0, 0);
             this.chromiumWebBrowser1.Name = "chromiumWebBrowser1";
-            this.chromiumWebBrowser1.Size = new System.Drawing.Size(779, 399);
+            this.chromiumWebBrowser1.Size = new System.Drawing.Size(1055, 402);
             this.chromiumWebBrowser1.TabIndex = 1;
             this.chromiumWebBrowser1.LoadingStateChanged += new System.EventHandler<CefSharp.LoadingStateChangedEventArgs>(this.chromiumWebBrowser1_LoadingStateChanged);
             // 
@@ -350,13 +352,14 @@ namespace Bildvisaren
             this.listView1.GridLines = true;
             this.listView1.HideSelection = false;
             this.listView1.LabelWrap = false;
-            this.listView1.Location = new System.Drawing.Point(494, 0);
+            this.listView1.Location = new System.Drawing.Point(770, 0);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(265, 380);
+            this.listView1.Size = new System.Drawing.Size(265, 383);
             this.listView1.TabIndex = 1;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.List;
             this.listView1.Visible = false;
+            this.listView1.DoubleClick += new System.EventHandler(this.listView1_DoubleClick);
             // 
             // contextMenuStrip_image_list
             // 
@@ -408,11 +411,23 @@ namespace Bildvisaren
             this.openFileDialog_load_playlist.FileName = "openFileDialog_load_playlist";
             this.openFileDialog_load_playlist.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog_load_playlist_FileOk);
             // 
+            // checkBox_rand_order_of_image
+            // 
+            this.checkBox_rand_order_of_image.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.checkBox_rand_order_of_image.AutoSize = true;
+            this.checkBox_rand_order_of_image.Location = new System.Drawing.Point(437, 4);
+            this.checkBox_rand_order_of_image.Name = "checkBox_rand_order_of_image";
+            this.checkBox_rand_order_of_image.Size = new System.Drawing.Size(124, 17);
+            this.checkBox_rand_order_of_image.TabIndex = 17;
+            this.checkBox_rand_order_of_image.Text = "Random image order";
+            this.checkBox_rand_order_of_image.UseVisualStyleBackColor = true;
+            this.checkBox_rand_order_of_image.CheckedChanged += new System.EventHandler(this.checkBox_rand_order_of_image_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(779, 483);
+            this.ClientSize = new System.Drawing.Size(1055, 486);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -428,6 +443,8 @@ namespace Bildvisaren
             this.ResumeLayout(false);
 
         }
+
+
 
         #endregion
 
@@ -460,6 +477,7 @@ namespace Bildvisaren
         private NumericUpDown numericUpDown1;
         private CheckBox checkBox_invert_move;
         private CefSharp.WinForms.ChromiumWebBrowser chromiumWebBrowser1;
+        private CheckBox checkBox_rand_order_of_image;
     }
 }
 

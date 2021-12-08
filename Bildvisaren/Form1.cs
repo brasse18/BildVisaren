@@ -13,9 +13,11 @@ namespace Bildvisaren
         public List<string> image_List = new List<string>();
         int index = 0;
         public List<string> mapps = new List<string>();
+        public List<int> RandListIndex = new List<int>();
         int zoomRatio = 2;
         Vector2 MousePos;
         private bool _dragging;
+        private static Random rng = new Random();
 
         public Form1(string[] args)
         {
@@ -44,6 +46,43 @@ namespace Bildvisaren
                 updateImageInfo();
             }
             chromiumWebBrowser1.Visible = false;
+        }
+
+        public void makeRandList()
+        {
+            RandListIndex.Clear();
+            for(int i = 0; i < image_List.Count; i++)
+            {
+                RandListIndex.Add(i);
+            }
+            ShuffleRandIndexList();
+            //string Sout = "";
+            //System.Console.WriteLine("Rand Array: ");
+            //foreach (int item in RandListIndex)
+            //{
+            //    Sout += item.ToString();
+            //    Sout += " ,";
+            //}
+            //System.Console.WriteLine(Sout);
+        }
+        public void ShuffleRandIndexList()
+        {
+            int n = RandListIndex.Count;
+            while (n > 1)
+            {
+                n--;
+                int k = rng.Next(n + 1);
+                int value = RandListIndex[k];
+                RandListIndex[k] = RandListIndex[n];
+                RandListIndex[n] = value;
+            }
+
+        }
+
+        public int getNextRandImageIndex()
+        {
+
+            return 0;
         }
 
         public void loadeSetings()
@@ -94,6 +133,14 @@ namespace Bildvisaren
             else
             {
                 checkBox_invert_move.Checked = false;
+            }
+            if (Properties.Settings.Default.rand_order_image == true)
+            {
+                checkBox_rand_order_of_image.Checked = true;
+            }
+            else
+            {
+                checkBox_rand_order_of_image.Checked = false;
             }
         }
 
@@ -155,7 +202,10 @@ namespace Bildvisaren
             {
                 Image_name.Text = "---- Ingen bild ----";
             }
-
+            if(image_List.Count != RandListIndex.Count)
+            {
+                makeRandList();
+            }
         }
 
         public void uppdateListview()
@@ -219,27 +269,61 @@ namespace Bildvisaren
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (index == image_List.Count - 1)
+            if (checkBox_rand_order_of_image.Checked == true)
             {
-                index = 0;
-            }
-            else
+                int tempInt = RandListIndex.IndexOf(index);
+                if (tempInt == RandListIndex.Count - 1)
+                {
+                    index = RandListIndex[0];
+                }
+                else
+                {
+                    tempInt++;
+                    index = RandListIndex[tempInt]; ;
+                }
+            } else
             {
-                index++;
+                if (index == image_List.Count - 1)
+                {
+                    index = 0;
+                }
+                else
+                {
+                    index++;
+                }
             }
+
+            
                 updateImageInfo();
         }
 
         private void pre_button_Click(object sender, EventArgs e)
         {
-            if (index == 0)
+            if (checkBox_rand_order_of_image.Checked == true)
             {
-                index = image_List.Count -1;
+                int tempInt = RandListIndex.IndexOf(index);
+                if (tempInt == 0)
+                {
+                    index = RandListIndex[RandListIndex.Count - 1];
+                }
+                else
+                {
+                    tempInt--;
+                    index = RandListIndex[tempInt]; ;
+                }
             }
             else
             {
-                index--;
+                if (index == 0)
+                {
+                    index = image_List.Count - 1;
+                }
+                else
+                {
+                    index--;
+                }
             }
+
                 updateImageInfo();
 
         }
@@ -412,6 +496,7 @@ namespace Bildvisaren
                 image_List.Remove(item.Text);
             }
             uppdateListview();
+            makeRandList();
         }
 
         private void toolStripMenuItem_clear_Click(object sender, EventArgs e)
@@ -489,6 +574,29 @@ namespace Bildvisaren
         private void chromiumWebBrowser1_LoadingStateChanged(object sender, CefSharp.LoadingStateChangedEventArgs e)
         {
 
+        }
+
+        private void listView1_DoubleClick(object sender, EventArgs e)
+        {
+            if(listView1.SelectedItems.Count != 0)
+            {
+                index = listView1.SelectedItems[0].Index;
+                updateImageInfo();
+            }
+            
+        }
+
+        private void checkBox_rand_order_of_image_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox_rand_order_of_image.Checked == true)
+            {
+                Properties.Settings.Default.rand_order_image = true;
+            }
+            else
+            {
+                Properties.Settings.Default.rand_order_image = false;
+            }
+            Properties.Settings.Default.Save();
         }
     }
 }

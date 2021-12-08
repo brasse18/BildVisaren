@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Bildvisaren.exe" size="644576">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Bildvisaren.exe" size="570848">
       <assemblyIdentity name="Bildvisaren" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>2JNajs8x2K77BpErETk1L0V5pHgL0aYQKuWuDaS2A4A=</dsig:DigestValue>
+        <dsig:DigestValue>wQusJOH9DXHnhzrX236WTzb6y94AHUGkOfnuAr+wAGQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -102,13 +102,13 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="Bildvisaren.exe.config" size="1564">
+  <file name="Bildvisaren.exe.config" size="1694">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>rvIEcKIs83AwpPZe9opVBkKl4UH2Aj4ceZP9D0gtCuY=</dsig:DigestValue>
+      <dsig:DigestValue>JIZCKzyIzirlVOExHSZHeL/BeKm++AQo/FEjwP2dNbw=</dsig:DigestValue>
     </hash>
   </file>
   <file name="icon.ico" size="116281">
