@@ -119,11 +119,11 @@ namespace Bildvisaren
             }
             if (Properties.Settings.Default.fit_h_screen == true)
             {
-                checkBox_w_screen.Checked = true;
+                checkBox_h_screen.Checked = true;
             }
             else
             {
-                checkBox_w_screen.Checked = false;
+                checkBox_h_screen.Checked = false;
             }
             numericUpDown1.Value = Properties.Settings.Default.scroll_factor;
             if (Properties.Settings.Default.image_move_invert == -1)
