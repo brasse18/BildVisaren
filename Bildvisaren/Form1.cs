@@ -56,15 +56,8 @@ namespace Bildvisaren
                 RandListIndex.Add(i);
             }
             ShuffleRandIndexList();
-            //string Sout = "";
-            //System.Console.WriteLine("Rand Array: ");
-            //foreach (int item in RandListIndex)
-            //{
-            //    Sout += item.ToString();
-            //    Sout += " ,";
-            //}
-            //System.Console.WriteLine(Sout);
         }
+
         public void ShuffleRandIndexList()
         {
             int n = RandListIndex.Count;
@@ -226,7 +219,17 @@ namespace Bildvisaren
 
         public void saveToPath(string path)
         {
-            System.IO.File.WriteAllLines(path, image_List.ToArray());
+            string[] saveAr = new String[image_List.Count + 1];
+            int count = 0;
+            saveAr[count] = index.ToString();
+            count++;
+            foreach (string item in image_List.ToArray())
+            {
+                saveAr[count] = item;
+                count++;
+            }
+            //System.IO.File.WriteAllLines(path, image_List.ToArray());
+            System.IO.File.WriteAllLines(path, saveAr);
         }
 
         public void AddFolder(string[] folders)
@@ -298,8 +301,6 @@ namespace Bildvisaren
                     index++;
                 }
             }
-
-            
                 updateImageInfo();
         }
 
@@ -329,9 +330,7 @@ namespace Bildvisaren
                     index--;
                 }
             }
-
                 updateImageInfo();
-
         }
 
         private void pictureBox1_MouseWheel(object sender, MouseEventArgs e)
@@ -343,7 +342,6 @@ namespace Bildvisaren
             if (Properties.Settings.Default.resize_mousewell == true)
             {
                 int scroling = e.Delta * SystemInformation.MouseWheelScrollLines / 120;
-                //pictureBox1.Size = new System.Drawing.Size(pictureBox1.Size.Width + scroling, pictureBox1.Size.Height + scroling);
                 pictureBox1.Width += widthZoom * scroling;
                 pictureBox1.Height += heightZoom * scroling;
             }
@@ -457,7 +455,7 @@ namespace Bildvisaren
         private void saveFileDialog1_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
         {
             string path = saveFileDialog1.FileName;
-            Console.WriteLine("path of file '{0}'.", path);
+            //Console.WriteLine("path of file '{0}'.", path);
             saveToPath(path);
         }
 
@@ -475,12 +473,32 @@ namespace Bildvisaren
         {
             string[] lines = System.IO.File.ReadAllLines(path);
             image_List.Clear();
-            foreach (string PathToAdd in lines)
+            for(int i = 1; i < lines.Length; i++)
             {
-                image_List.Add(PathToAdd);
-                Console.WriteLine("add '{0}'.", PathToAdd);
+                image_List.Add(lines[i]);
+                //Console.WriteLine("add '{0}'.", lines[i]);
             }
-            index = 0;
+            //foreach (string PathToAdd in lines)
+            //{
+            //    image_List.Add(PathToAdd);
+            //    Console.WriteLine("add '{0}'.", PathToAdd);
+            //}
+            //index = 0;
+            if (lines.Length != 0)
+            {
+                bool isParsable = Int32.TryParse(lines[0], out index);
+                if (isParsable)
+                {
+                    Console.WriteLine("Index = '{0}'.", index);
+                } else
+                {
+                    Console.WriteLine("no saved index");
+                }
+                
+            } else
+            {
+                index = 0;
+            }
             uppdateListview();
             updateImageInfo();
         }

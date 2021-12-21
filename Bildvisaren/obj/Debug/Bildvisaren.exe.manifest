@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Bildvisaren.exe" size="570848">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Bildvisaren.exe" size="571360">
       <assemblyIdentity name="Bildvisaren" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ft8SbWhX6XhEGQo8E2iFI1q27S8bbMG4pm8d6SnsSzc=</dsig:DigestValue>
+        <dsig:DigestValue>gUexp7bsUAHWW46F61UApQRnXCNpZkvZOeDPNoScH7I=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
