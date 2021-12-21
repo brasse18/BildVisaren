@@ -540,21 +540,17 @@ namespace Bildvisaren
 
             if (Control.MouseButtons == MouseButtons.Left)
             {
-                //Console.WriteLine("X '{0}' VerticalScroll: '{1}' max: {2} min: {3}", (int)(MousePos.X - Control.MousePosition.X), panel2.VerticalScroll.Value, panel2.VerticalScroll.Maximum, panel2.VerticalScroll.Minimum);
-                //Console.WriteLine("Y '{0}' HorizontalScroll: '{1}' max: {2} min: {3}", (int)(MousePos.Y - Control.MousePosition.Y), panel2.HorizontalScroll.Value, panel2.HorizontalScroll.Maximum, panel2.HorizontalScroll.Minimum);
                 // X
                 int HScroll = (int)(Properties.Settings.Default.scroll_factor * Properties.Settings.Default.image_move_invert * (MousePos.X - Control.MousePosition.X));
                 if (panel2.HorizontalScroll.Maximum >= panel2.HorizontalScroll.Value+ HScroll && panel2.HorizontalScroll.Minimum <= panel2.HorizontalScroll.Value + HScroll)
                 {
                     panel2.HorizontalScroll.Value += HScroll;
-                    //Console.WriteLine("HorizontalScroll: '{0}'.", HScroll);
                 }
                 // Y
                 int VScroll = (int)(Properties.Settings.Default.scroll_factor * Properties.Settings.Default.image_move_invert * (MousePos.Y - Control.MousePosition.Y));
                 if (panel2.VerticalScroll.Maximum >= panel2.VerticalScroll.Value + VScroll && panel2.VerticalScroll.Minimum <= panel2.VerticalScroll.Value + VScroll)
                 {
                     panel2.VerticalScroll.Value += VScroll;
-                    //Console.WriteLine("VerticalScroll: '{0}'.", VScroll);
                 }
             }
             MousePos.X = Control.MousePosition.X;
